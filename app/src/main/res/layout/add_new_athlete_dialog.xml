@@ -135,7 +135,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="@+id/textView13"
             app:layout_constraintTop_toBottomOf="@+id/add_athlete_dialog_best_performance_field"
-            app:srcCompat="@drawable/gold_medal" />
+            app:srcCompat="@drawable/gold_meda" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/add_athlete_dialog_gold_field"
@@ -163,7 +163,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/add_athlete_dialog_gold_field"
             app:layout_constraintEnd_toStartOf="@+id/add_athlete_dialog_silver_field"
             app:layout_constraintTop_toTopOf="@+id/add_athlete_dialog_gold_field"
-            app:srcCompat="@drawable/silver_medal" />
+            app:srcCompat="@drawable/silver_meda" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/add_athlete_dialog_silver_field"
@@ -190,7 +190,7 @@
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/imageView4"
-            app:srcCompat="@drawable/bronze_medal" />
+            app:srcCompat="@drawable/bronze_meda" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/add_athlete_dialog_bronze_field"

@@ -18,147 +18,100 @@ import com.example.lab6.dialog.AddNewsDialogFragment
 class NewsFragment : Fragment() {
 
  lateinit var binding: FragmentNewsBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+ override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(savedInstanceState)
 
-    }
+ }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+ override fun onCreateView(
+  inflater: LayoutInflater, container: ViewGroup?,
+  savedInstanceState: Bundle?
+ ): View {
 
-      binding = FragmentNewsBinding.inflate(inflater, container, false)
+  binding = FragmentNewsBinding.inflate(inflater, container, false)
 
-     binding.newsRecyclerView.adapter = NewsRecyclerViewAdapter(news)
+  binding.newsRecyclerView.adapter = NewsRecyclerViewAdapter(news)
 
-     binding.newsRecyclerView.layoutManager = LinearLayoutManager(this.context, )
+  binding.newsRecyclerView.layoutManager = LinearLayoutManager(this.context,)
 
-     binding.newsFab.setOnClickListener{
+  binding.newsFab.setOnClickListener {
 
-      AddNewsDialogFragment( object : AddNewsDialogFragment.AddNewsDialogCallback {
-       override fun onNewsAdded(item: NewsArticle) {
-
-
-       news.add(0, item)
-        binding.newsRecyclerView.adapter?.notifyItemInserted(0)
-        binding.newsRecyclerView.scrollToPosition(0)
+   AddNewsDialogFragment(object : AddNewsDialogFragment.AddNewsDialogCallback {
+    override fun onNewsAdded(item: NewsArticle) {
 
 
-       }
-      }).show(parentFragmentManager, "ADD_NEW_SPORT_DIALOG")
-
-     }
-
-        return binding.root
-    }
-
-    companion object {
-
-        data class NewsArticle(
-            val title: CharSequence,
-            val description: CharSequence,
-            val urlToImage: CharSequence
-        )
-
-
-       val news =  mutableListOf(
-        NewsArticle  ("Ford Is Enticing Tesla Owners With Special F-150 Lightning EV Discount",
-        "Ford isn’t going after Tesla — just its customers. The Big Three legacy car titan has unveiled a special discount for Tesla owners who purchase its F-150 Lightning EV pickup, just one day after Ford dropped the Lightning’s price by up to $5,500 to boost flagg…",
-        "https://c.biztoc.com/274/og.png")
-        ,
-
-        NewsArticle  ("Is EU competition working? One company shows a 250 percent increase. Hashtag Trending for Friday April 12, 2024",
-        "US Internet providers must now display clear pricing and product information. HP Ink controversy continues to stain the company’s reputation with consumers. Is the EU’s competition legislation working? Early numbers seem to show it might be. And there’s a 10 …",
-        "https://i.itworldcanada.com/wp-content/uploads/2023/04/Hashtag-TRending-2.png")
-        ,
-
-
-        NewsArticle  ("Rivian, Lucid at New Lows as Ford Price Cut Fans EV Concerns",
-        "Shares of electric vehicle startups Rivian Automotive Inc. and Lucid Group Inc. closed at all-time lows Thursday after Ford Motor Co. slashed prices on its electric pickup truck. • None US Sees Imminent Missile Strike on Israel by Iran, Proxies • None US Slam…",
-        "https://c.biztoc.com/p/df2c697fec9f9a25/og.webp")
-        ,
-
-        NewsArticle  ("Test Shows the Model X Has Better Range Than the Cybertruck When Pulling the Same Trailer",
-        "Weighed Down Despite being designed to pull trailers that weigh many thousands of pounds, Tesla's Cybertruck is seemingly not great at the whole towing thing. Geneva Long, founder and CEO of all-electric RV maker Bowlus, found that a Model X figuratively ran …",
-        "https://wp-assets.futurism.com/2024/04/test-model-x-better-range-cybertruck-pulling-trailer.jpg")
-        ,
-
-        NewsArticle  ("Ford targets Tesla owners with $1,500 EV 'conquest' rebates",
-        "is targeting one automaker in particular when it comes to boosting EV sales — Tesla (TSLA). As first noted by CarsDirect.com (via Ford Authority), Ford sent out an incentive bulletin to its dealers offering a $1,500 rebate specifically for Tesla owners who pu…",
-        "https://c.biztoc.com/p/132cb3d3488dc28b/og.webp")
-        ,
-
-        NewsArticle  ("What are electric vehicle stock prices? Rivian, Lucid face record lows",
-        "Shares of electric vehicle startups Rivian Automotive Inc. and Lucid Group Inc. are staring down all-time lows Thursday after Ford Motor Co. slashed prices on its electric pickup truck. The industrywide price war on electric autos is a major concern for inves…",
-        "https://c.biztoc.com/p/dff01fb65d712367/og.webp")
-        ,
-
-
-
-        NewsArticle  ("You Just Need an EV Charger in One of These 3 Places",
-        "If you don’t have an electric car, there are two questions you are almost certain to have about an electric car — how long does it take to charge, and how far does the car take you on a full charge? In reality, those issues, especially the former, matter very…",
-        "https://cleantechnica.com/wp-content/uploads/2023/12/Tesla-Model-3-Home-Charging-110V-Tennis-Balls-CleanTechnica-e1617245576144.jpeg")
-        ,
-
-        NewsArticle  ("The Fallout 4 next-gen update announced in 2022 will finally be out later this month",
-        "Almost in time for the Fallout TV series on Amazon.",
-        "https://cdn.mos.cms.futurecdn.net/qpRzGc9zWMLVXJwEq7v8R-1200-80.jpg")
-        ,
-
-        NewsArticle  ("3 EV Stocks to Avoid Like a Dead Battery After Xiaomi’s SU7 Triumph",
-        "Here are three EV stocks to avoid in Xiaomi's wake Xiaomi (OTCMKTS: ), known for its smartphones, is making a bold entry into the electric vehicle (EV) market. The company announced it will launch its first EV at competitive prices, which put several names in…",
-        "https://c.biztoc.com/p/858a566ebe240256/s.webp")
-        ,
-
-        NewsArticle  ("What to know about Elon Musk's 'free speech' feud with a Brazilian judge",
-        "Elon Musk is clashing with a bald, athletically built Supreme Court justice in Brazil over free speech, far-right accounts and misinformation on X",
-        "https://i.abcnewsfe.com/a/9accf2d9-8038-430e-9bb2-305c40bac1a4/wirestory_bef06c0dbbb8ed87495b1afbb0edf211_16x9.jpg?w=1600")
-        ,
-
-        NewsArticle  ("What to know about Elon Musk's 'free speech' feud with a Brazilian judge",
-        "Headline-grabbbing billionaire Elon Musk is clashing with a Supreme Court justice in Brazil over free speech, far-right accounts and misinformation on X, the social media platform Musk bought when it was Twitter. Since his takeover, Musk has upended many of T…",
-        "https://c.biztoc.com/p/760e6fc28738e347/s.webp")
-        ,
-
-        NewsArticle  ("What to know about Elon Musk's 'free speech' feud with a Brazilian judge",
-        "Headline-grabbbing billionaire Elon Musk is clashing with a Supreme Court justice in Brazil over free speech, far-right accounts and misinformation on X, the social media platform Musk bought when it was Twitter.",
-        "https://www.startribune.com/static/img/branding/logos/strib-social-card.png?d=1712855680")
-        ,
-
-        NewsArticle  ("What to know about Elon Musk’s ‘free speech’ feud with a Brazilian judge",
-        "Elon Musk is clashing with a bald, athletically built Supreme Court justice in Brazil over free speech, far-right accounts and misinformation on X. The headline-grabbbing billionaire bought the social media platform when it was Twitter. He has upended many of…",
-        "https://www.bostonherald.com/wp-content/uploads/2024/04/Brazil_Musk_Investigation_45984_f3ac0f.jpg?w=1024&h=683")
-        ,
-
-        NewsArticle  ("Xiaomi Electrifies the Road: First EV, the SU7, Races Out of the Gate with Over 100,000 Orders and Begins Deliveries",
-        "Beijing, China – April 11, 2024 – Buckle up, because Xiaomi is shifting gears and leaving the competition in the dust. The Chinese tech titan has stormed into the electric vehicle (EV) market with its debut car, the SU7, and it's already a runaway success. Ju…",
-        "https://energycentral.com/sites/default/files/styles/og_meta/public/ece/node_main/2024/4/xiaomi.webp?itok=OanCeSh3")
-        ,
-
-        NewsArticle  ("Mercedes-Benz India steals a march over rivals in EV race",
-        "Mercedes-Benz has also firmed up plans to launch three new battery electric vehicles this calendar year to further consolidate its position in the EV space. This will form part of the dozen new models the company plans to introduce during the year.",
-        "https://img.etimg.com/thumb/msid-109227024,width-1200,height-630,imgsize-54396,overlay-economictimes/photo.jpg")
-        ,
-
-
-
-        NewsArticle  ("The 2025 Toyota 4Runner Has Tons of Buttons Inside. That’s on Purpose",
-        "Rather than slapping an iPad on the dash and calling it a day, the 4Runner's interior designers considered how to make its interface useful and practical.",
-        "https://s.yimg.com/ny/api/res/1.2/lo8IvKYXzRZHV73pqe7rSw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU-/https://media.zenfs.com/en/the_drive_634/e9421408159475b4a63fa15837e9558b")
-        ,
-
-        NewsArticle  ("Ford targets Tesla owners with $1,500 EV 'conquest' rebates",
-        "is targeting one automaker in particular when it comes to boosting EV sales — Tesla (TSLA). As first noted by CarsDirect.com (via Ford Authority), Ford sent out an incentive bulletin to its dealers offering a $1,500 rebate specifically for Tesla owners who pu…",
-        "https://c.biztoc.com/p/55bd15f813bfaea7/s.webp")
-        ,
-
-        NewsArticle  ("Strong Q1 demand for IPOs bodes well for 2024, experts say: ‘I’m way more optimistic than I’ve been the last two years’",
-        "The market is heating up at the top. But will it trickle down?",
-        "https://fortune.com/img-assets/wp-content/uploads/2024/04/NYSE-Trader-GettyImages-e1712858504417.jpg?resize=1200,600")
-
-        )
+     news.add(0, item)
+     binding.newsRecyclerView.adapter?.notifyItemInserted(0)
+     binding.newsRecyclerView.scrollToPosition(0)
 
 
     }
+   }).show(parentFragmentManager, "ADD_NEW_SPORT_DIALOG")
+
+  }
+
+  return binding.root
+ }
+
+ companion object {
+
+  data class NewsArticle(
+   val title: CharSequence,
+   val description: CharSequence,
+   val urlToImage: CharSequence
+  )
+
+  val news = mutableListOf(
+   NewsArticle(
+    "Global EV Sales Surge as Governments Push for Greener Transport",
+    "Electric vehicle (EV) sales have seen a dramatic increase worldwide as more governments implement policies encouraging their use to combat climate change.",
+    "data:image/png;base64,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"
+   ),
+   NewsArticle(
+    "Breakthrough in Renewable Energy: New Solar Cell Efficiency Record Set",
+    "Researchers at the Solar Tech Lab have set a new world record for solar cell efficiency, promising to revolutionize the renewable energy industry.",
+    "data:image/jpeg;base64,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"
+   ),
+   NewsArticle(
+    "Tech Giants Pledge to Improve Digital Literacy Worldwide",
+    "Major tech companies have come together to announce a new global initiative aimed at increasing digital literacy, with special focus on underdeveloped regions.",
+    "https://d2eehagpk5cl65.cloudfront.net/img/c800x450-w800-q80/uploads/2023/01/dreamstime_xxl_209504587-800x450.jpg"
+   ),
+   NewsArticle(
+    "Revolutionary Biodegradable Plastics Break Down in Just One Year",
+    "Scientists have developed a new type of biodegradable plastic that decomposes within a year, offering a potential solution to the global plastic waste crisis.",
+    "https://wp-assets.environment.org/2024/04/biodegradable-plastic-innovation.jpg"
+   ),
+   NewsArticle(
+    "New Study Shows Mediterranean Diet Could Extend Lifespan",
+    "A recent study links the Mediterranean diet to increased longevity and reduced risk of chronic diseases, reinforcing its health benefits.",
+    "https://cleantechnica.com/wp-content/uploads/2024/04/mediterranean-diet-longevity.jpg"
+   ),
+   NewsArticle(
+    "Virtual Reality Tech Takes Leap Forward with Next-Gen Headsets",
+    "The latest generation of virtual reality headsets offers unprecedented immersion and comfort, signaling a new era for the technology.",
+    "https://cdn.futuretech.com/2024/04/vr-next-gen-update.jpg"
+   ),
+   NewsArticle(
+    "Arctic Ice Melt Slower This Year, Scientists Cautiously Optimistic",
+    "This year's Arctic ice melt rate is significantly slower than previous years, leading scientists to be cautiously optimistic about climate trends.",
+    "https://img.arcticnews.com/2024/04/arctic-ice-slow-melt.jpg"
+   ),
+   NewsArticle(
+    "International Space Station Welcomes First Civilian Visitors",
+    "The International Space Station has opened its doors to civilian visitors for the first time, marking a new chapter in space tourism.",
+    "https://spacefacts.com/news/2024/04/iss-civilian-visitors.jpg"
+   ),
+   NewsArticle(
+    "Urban Farming Revolution: Cities Turn to High-Tech Farms for Sustainability",
+    "Urban centers are increasingly turning to high-tech farming solutions to address food security and reduce carbon footprints within city environments.",
+    "https://urbanfarming.tech/new-wave-2024.jpg"
+   ),
+   NewsArticle(
+    "Breakthrough in Alzheimer’s Treatment Shows Promise in Early Trials",
+    "Early clinical trials of a new Alzheimer's treatment show promise, potentially leading to a significant breakthrough in combating the disease.",
+    "https://healthnews.com/2024/04/alzheimers-breakthrough.jpg"
+   )
+  )
+ }
 }

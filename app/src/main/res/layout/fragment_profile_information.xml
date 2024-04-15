@@ -37,7 +37,7 @@
             android:layout_height="150dp"
             android:background="@drawable/circle_background"
             android:scaleType="centerCrop"
-            android:src="@drawable/photo_on_4_15_24_at_12_41pm" />
+            android:src="@drawable/photo_on_4_15_24_at_12_41p" />
     </androidx.cardview.widget.CardView>
 
     <TextView

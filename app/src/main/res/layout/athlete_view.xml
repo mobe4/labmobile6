@@ -70,7 +70,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/athlete_best_performance_text_view"
                 app:layout_constraintTop_toBottomOf="@+id/athlete_best_performance_text_view"
-                app:srcCompat="@drawable/gold_medal" />
+                app:srcCompat="@drawable/gold_meda" />
 
             <TextView
                 android:id="@+id/athlete_gold_medal_text_view"
@@ -90,7 +90,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/athlete_gold_medal_text_view"
                 app:layout_constraintStart_toEndOf="@+id/athlete_gold_medal_text_view"
                 app:layout_constraintTop_toTopOf="@+id/athlete_gold_medal_text_view"
-                app:srcCompat="@drawable/silver_medal" />
+                app:srcCompat="@drawable/silver_meda" />
 
             <TextView
                 android:id="@+id/athlete_silver_medal_text_view"
@@ -110,7 +110,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/athlete_silver_medal_text_view"
                 app:layout_constraintStart_toEndOf="@+id/athlete_silver_medal_text_view"
                 app:layout_constraintTop_toTopOf="@+id/athlete_silver_medal_text_view"
-                app:srcCompat="@drawable/bronze_medal" />
+                app:srcCompat="@drawable/bronze_meda" />
 
             <TextView
                 android:id="@+id/athlete_bronze_medal_text_view"
